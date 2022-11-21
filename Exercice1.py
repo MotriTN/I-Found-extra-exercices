@@ -1,24 +1,27 @@
-n=int(input("Give the number : "))
-b=n
-c=True
-if n//10 > n%10: #4321
-    r=True #tasa3oudi
-elif n//10 < n%10: #1234
-    r=False #tanezouli
-else :
-    c=False
-while c==True:
-    if n//10 > n%10 and r==True: #4321 
+n=int(input("Give n :")) #1234 or 4321
+l=len(str(n))
+z=1
+j=1
+a,b=False,False
+i=0
+while not j==0 and not i==(l-1):
+    i+=1
+    z=n%10
+    j=((n//10)%10)
+    print(j)
+    if z>j:
+        a=True
         n//=10
-    elif n//10 < n%10 and r==False : #1234
+    elif j>z :
+        b=True
         n//=10
-    else:
-        c=False
-        if r==True:
-            print("Ascending")
-        elif r==False:
-            print("Descending")
-        else:
-            print(f"the number {b} is not porte bonheur")
+    elif z==j:
+        a=True
+        b=True
 else:
-    print(f"there is a draw in the number {b}")
+    if (a,b)==(True,True):
+        print("This number is bad")
+    elif (a,b)==(True,False):
+        print("This number is ascending")
+    elif (a,b)==(False,True):
+        print("This number is descending")
